@@ -730,6 +730,9 @@ retrieve_url (struct url * orig_parsed, const char *origurl, char **file,
   char *saved_method = NULL;
   char *saved_body_file_name = NULL;
 
+#ifndef DISABLE_XIA
+  fprintf(stderr, "Retrieving: %s\n", orig_parsed->url);
+#endif
   /* If dt is NULL, use local storage.  */
   if (!dt)
     {
